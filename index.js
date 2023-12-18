@@ -21,5 +21,40 @@ app.use(cors({
 app.get("/",(req,res)=>{
     res.json("Hello");
 })
+app.post('/laptop/add', async (req, res) => {
+  const { name, price, ramSize, type, brand, features, images } = req.body;
+
+  const newLaptop = new Laptop({
+    name,
+    price,
+    ramSize,
+    type,
+    brand,
+    images, // Assuming images is an array of image URLs
+    features,
+  });
+
+  try {
+    const savedLaptop = await newLaptop.save();
+    res.status(201).json({ message: 'Laptop added successfully', laptop: savedLaptop });
+  } catch (error) {
+    console.error('Error:', error.message);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+ 
+app.get('/laptop/get', async (req, res) => {
+  try {
+    const laptops = await Laptop.find();
+
+    
+
+    res.send(laptops);
+  } catch (error) {
+    console.error('Error fetching laptops:', error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
