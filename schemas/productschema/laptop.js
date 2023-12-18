@@ -8,14 +8,15 @@ const laptopSchema = mongoose.Schema({
   ramSize: Number,
   type: String,
   brand: String,
-  images: [String],
-  features: [
-    {
-      name: String,
-    },
-  ],
+  images: [{
+    data: Buffer,
+    contentType: String,
+  }],
+  features: [{
+    name: String
+  }],
 });
 
 const Laptop = mongoose.model('Laptop', laptopSchema);
 
-export { Laptop };
+export default Laptop;
