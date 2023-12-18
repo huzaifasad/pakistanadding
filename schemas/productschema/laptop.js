@@ -8,10 +8,7 @@ const laptopSchema = mongoose.Schema({
   ramSize: Number,
   type: String,
   brand: String,
-  images: [{
-    data: Buffer,
-    contentType: String,
-  }],
+  images: [String],
   features: [{
     name: String
   }],
