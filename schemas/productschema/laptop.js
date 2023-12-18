@@ -1,5 +1,3 @@
-// schemas/productschema/Laptop.js
-
 import mongoose from 'mongoose';
 
 const laptopSchema = mongoose.Schema({
@@ -20,4 +18,4 @@ const laptopSchema = mongoose.Schema({
 
 const Laptop = mongoose.model('Laptop', laptopSchema);
 
-export { Laptop }; // Use named export
+export { Laptop };
