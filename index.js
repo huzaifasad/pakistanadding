@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 const app = express();
-import { Laptop } from './schemas/productschema/Laptop.js'; // Import using the exact same name
+import Laptop  from './schemas/productschema/laptop.js'; // Import using the exact same name
 
 // index.js (server)
 const url = 'mongodb+srv://mhuzaifatariq7:luckynumber7@cluster0.mjqk6et.mongodb.net/your-database-name?retryWrites=true&w=majority';
