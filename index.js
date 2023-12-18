@@ -13,7 +13,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.listen(5000);
 app.use(cors({
-    origin: "http://localhost:3000", // Update to your frontend URL
+    origin: "https://6580a6d2fcc49112c6016a10--stirring-toffee-a67090.netlify.app", // Update to your frontend URL
     methods: ["POST", "GET","PUT","DELETE"],
     credentials: true
   }));
