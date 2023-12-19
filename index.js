@@ -4,7 +4,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 const app = express();
 import Laptop  from './schemas/productschema/laptop.js'; // Import using the exact same name
-
+app.use(bodyParser.json({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // index.js (server)
 const url = 'mongodb+srv://mhuzaifatariq7:luckynumber7@cluster0.mjqk6et.mongodb.net/your-database-name?retryWrites=true&w=majority';
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -157,5 +158,4 @@ app.post('user/signup', async (req, res) => {
       res.status(500).json({ message: 'Internal Server Error' });
     }
   });
-app.use(bodyParser.json({ extended: true }));
-app.use(bodyParser.urlencoded({ extended: true }));
+
