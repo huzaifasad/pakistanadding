@@ -7,7 +7,7 @@ import Laptop  from './schemas/productschema/laptop.js'; // Import using the exa
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 // index.js (server)
-const url = 'mongodb+srv://huzaifa08567:Pakistan211@cluster0.opjt9zs.mongodb.net/?retryWrites=true&w=majority';
+const url = 'mongodb+srv://mhuzaifatariq7:luckynumber7@cluster0.mjqk6et.mongodb.net/your-database-name?retryWrites=true&w=majority';
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => console.log('connected to the database'))
 .catch(()=> console.log('not conncted'));
