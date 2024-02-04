@@ -14,7 +14,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.listen(5000);
 app.use(cors({
-    origin: "http://localhost:3000", // Update to your frontend URL
+    origin: "*", // Update to your frontend URL
     methods: ["POST", "GET","PUT","DELETE"],
     credentials: true
   }));
